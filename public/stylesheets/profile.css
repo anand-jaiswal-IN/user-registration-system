@@ -1,0 +1,72 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  background-image: url("/images/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.centralize {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.profileCard {
+  display: flex;
+}
+.leftProfileCard {
+  background-color: rgba(22, 22, 22, 0.671);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+}
+.leftProfileCard > * {
+  margin: 0;
+  padding: 0;
+}
+.rightProfileCard {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 1rem 2rem;
+}
+.rightProfileCard > table,
+tr,
+th {
+  /* border: 1px solid #000; */
+  border-collapse: collapse;
+  text-align: left;
+}
+.rightProfileCard td,
+th {
+  padding: 0.5rem;
+  padding-left: 0;
+}
+.rightProfileCard td {
+  padding-left: 1rem;
+}
+.editProfileLink {
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid grey;
+  padding: 0 0.5rem;
+  transition: 0.2s ease-in-out;
+}
+.editProfileLink:hover {
+  background-color: #222222;
+  color: #000;
+}
+.socialMediaLink > a {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 0.5rem 0;
+  color: #fff;
+}
+.socialMediaLink > a:hover {
+  color: red;
+}

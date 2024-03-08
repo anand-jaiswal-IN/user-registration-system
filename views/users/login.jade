@@ -1,0 +1,28 @@
+extends ../layout
+
+block css
+    link(rel='stylesheet' href='/stylesheets/login.css')
+
+block content
+        .wrapper
+            .centeralize
+                img(src="/images/logo.png" width="150px")
+                h2(style='\
+                color: white;\
+                text-transform: uppercase;\
+                border-bottom: 1px solid #fff;\
+                ')
+                    | Login Here
+                form(action='/users/login' method='post' name='loginForm')
+                    .inputForLogin
+                        input(type='text' name='username' placeholder='Username')
+                        p &nbsp;&nbsp;OR&nbsp;&nbsp;
+                        input(type='email' name='email' placeholder='E-mail')
+                    p.errorInput.errorEmailOrPassword
+                    input(type='password' name='password' placeholder='Password')
+                    p.errorInput.errorPassword
+                    input(type='submit' value='Login')
+                    p
+                        | Not have a account ? 
+                        a(href='/users/signup' style='color: red') SignUp Here
+        script(src='/javascripts/login.js')

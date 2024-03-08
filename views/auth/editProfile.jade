@@ -1,0 +1,106 @@
+extends ../layout
+
+block css
+    link(rel='stylesheet' href='/stylesheets/editProfile.css')
+
+block content
+        .wrapper
+            .centralize
+                #updateProfileImage.updateProfileImage
+                    button#closeUpdateProfileImage &times;
+                    form(action='/auth/updateProfilePhoto' method='post' name='userProfilePhotoUpdateForm' encType="multipart/form-data")
+                        input(type='file' name='profilePhoto' required='' accept=".png, .jpg, .jpeg, .svg")
+                        input(type='submit' value='Update Photo')
+                        p.errorInput.errorProfilePhoto 
+                form(action='/auth/editProfile' method='post' name='userProfileUpdateForm')
+                    .card
+                        .leftCard
+                            img(src= user.profileImgUrl alt='profile photo' width='150px')
+                            br
+                            button#updateProfileImageBtn.btn() Upload Profile Photo
+                        .rightCard
+                            table
+                                tbody
+                                    tr
+                                        th First Name :
+                                        td
+                                            input(type='text' name='firstName' value= user.firstName)
+                                            |  
+                                            br
+                                            p.errorInput.errorFirstName
+                                    tr
+                                        th Last Name :
+                                        td
+                                            input(type='text' name='lastName' value=user.lastName)
+                                            p.errorInput.errorLastName
+                                    tr
+                                        th Bio :
+                                        td
+                                            textarea(name='bio' cols='30' rows='5')= user.bio
+                                    tr
+                                        th Gender :
+                                        td
+                                            select(name='gender')
+                                                if user.gender == "male"
+                                                    option(value='male') Male
+                                                    option(value='female') Female
+                                                    option(value='not specified')
+                                                        | Not specified
+                                                else if user.gender == "female"
+                                                    option(value='male') Male
+                                                    option(value='female' selected='') Female
+                                                    option(value='not specified')
+                                                        | Not specified
+                                                else 
+                                                    option(value='male') Male
+                                                    option(value='female') Female
+                                                    option(value='not specified' selected='')
+                                                        | Not specified
+                                    //
+                                        <tr>
+                                        <th>Phone :</th>
+                                        <td>
+                                        <span>+91</span
+                                        ><input
+                                        type="number"
+                                        name="phone"
+                                        value="8081143378"
+                                        maxlength="10"
+                                        />
+                                        </td>
+                                        </tr>
+                                    tr
+                                        th Date of Birth :
+                                        td  
+                                            if user.dob
+                                                input(type='date' name='dob' value= user.dob.slice(0, 10) )
+                                            else 
+                                                input(type='date' name='dob')
+                                            p.errorInput.errorDob
+                                    tr
+                                        th Social Media Links :
+                                        td
+                                            table(name='socialMediaLinksTable')
+                                                tbody
+                                                    tr
+                                                        th Facebook :
+                                                        td
+                                                            input(type='url' name='facebookLink' value= user.socialMediaLinks.facebook)
+                                                            p.errorInput.errorFacebookLink
+                                                    tr
+                                                        th Twitter :
+                                                        td
+                                                            input(type='url' name='twitterLink' value= user.socialMediaLinks.twitter)
+                                                            p.errorInput.errorTwitterLink
+                                                    tr
+                                                        th Instagram :
+                                                        td
+                                                            input(type='url' name='instagramLink' value= user.socialMediaLinks.instagram)
+                                                            p.errorInput.errorInstagramLink
+                                    tr
+                                        th Password :
+                                        td
+                                            input(type='password' name='password')
+                                            p.errorInput.errorPassword
+                    input.btn(type='submit' value='Update')
+        script(src='/javascripts/editProfile.js')

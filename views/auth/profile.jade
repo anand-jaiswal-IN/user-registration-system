@@ -1,0 +1,42 @@
+extends ../layout
+
+block css
+    link(rel='stylesheet' href='/stylesheets/profile.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+block content
+    .wrapper
+        .centralize
+            .profileCard
+                .leftProfileCard
+                    img(src= user.profileImgUrl alt='Profile Photo' width='150px')
+                    p
+                        b= user.username
+                    p.nameOfUser= user.fullName
+                    p.bioOfUser= user.bio
+                    a(href='/auth/editProfile', class="editProfileLink") Edit Profile
+                .rightProfileCard
+                    h2(style='border-bottom: 1.5px solid #fff; padding-bottom: 0.5rem')
+                        | Information
+                    table
+                        tbody
+                            tr
+                                th E-mail :
+                                td= user.email
+                            tr
+                                th Phone :
+                                td= user.phone
+                            tr
+                                th Gender :
+                                td= user.gender
+                            tr
+                                th Date of Birth :
+                                if user.dob
+                                    td= user.dob.slice(0, 10)
+                    br
+                    h3(style='border-bottom: 0.1px solid #fff; padding-bottom: 0.5rem')
+                        | Social Media Linksd
+                    .socialMediaLink
+                        a(href= user.socialMediaLinks.facebook) <i class="fa-brands fa-facebook"></i>
+                        a(href= user.socialMediaLinks.twitter) <i class="fa-brands fa-x-twitter"></i>
+                        a(href= user.socialMediaLinks.instagram) <i class="fa-brands fa-instagram"></i>

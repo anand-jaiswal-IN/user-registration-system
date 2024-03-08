@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+.server-message {
+  position: absolute;
+  left:50%;
+  transform: translate(-50%, 0);
+  z-index: 100;
+  background-color: #fff;
+  color : #000;
+  padding: 0 1rem;
+}
+#serverMessageCloseBtn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+#serverMessageCloseBtn:hover {
+ color:red
+}

@@ -1,0 +1,62 @@
+.wrapper {
+  /* background-image: url("https://images.unsplash.com/photo-1558470598-a5dda9640f68?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+  background-image: url("../images/background1.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.centeralize {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 1rem;
+  border: 2px solid white;
+}
+form[name="loginForm"] input {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  font-size: 1rem;                            
+  line-height: 2rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.5rem;
+}
+.inputForLogin {
+  display: flex;
+  align-items: center;
+}
+form > input[type="submit"] {
+  margin-top: 0.7rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: rgb(5, 45, 156);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+form > input[type="submit"]:hover {
+  background-color: rgb(2, 24, 87);
+}
+
+.errorInput {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  color: rgb(85, 8, 8);
+}

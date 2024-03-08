@@ -1,0 +1,92 @@
+.wrapper {
+  position: relative;
+}
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.leftCard {
+  margin-right: 4rem;
+}
+form[name="userProfileUpdateForm"] > table,
+th,
+td {
+  text-align: left;
+}
+
+form[name="userProfileUpdateForm"] th,
+td {
+  padding: 1rem 0;
+  padding-right: 2rem;
+}
+form[name="userProfileUpdateForm"] input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+textarea {
+  padding: 0.3rem;
+  width: 100%;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+table[name="socialMediaLinksTable"] td {
+  padding: 0;
+}
+.btn {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0.5rem 1rem;
+  background-color: rgb(0, 76, 175);
+  border-radius: 1rem;
+  color: white;
+  transition: 0.1s ease-in-out;
+}
+.btn:hover {
+  background-color: rgb(0, 52, 119);
+}
+.updateProfileImage {
+  position: relative;
+    display: none;
+    position: absolute;
+    left: 50%;    
+    transform: translate(-50%);
+  padding: 5rem 1rem;
+    color: #fff;
+    background-color: rgb(32, 102, 102);
+}
+
+#closeUpdateProfileImage {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  font-size: 1.5rem;
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  background-color: #8100006c;
+}
+#closeUpdateProfileImage:hover {
+  background-color: #810000ce;
+}
+.updateProfileImage input[type="submit"]{
+    outline: none;
+    background: none;
+    border: none;
+    background-color: #810000;
+    color: #fff;
+    padding: 0.5rem 1rem ;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.updateProfileImage input[type="submit"]:hover {
+    background-color: #490000;
+}
+.errorInput {
+  font-size: 0.8rem;
+  color: red;
+}

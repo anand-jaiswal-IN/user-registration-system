@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  position: relative;
+  height: 100vh;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+.center a:first-child {
+  background-color: rgb(0, 112, 187);
+  margin-right: 0.5rem;
+}
+.center a:first-child:hover {
+  background-color: rgb(0, 78, 129);
+}
+.center a:last-child {
+  background-color: rgb(60, 124, 0);
+}
+.center a:last-child:hover {
+  background-color: rgb(33, 68, 0);
+}

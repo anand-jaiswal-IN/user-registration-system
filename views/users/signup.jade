@@ -1,0 +1,31 @@
+extends ../layout
+
+block css
+    link(rel='stylesheet' href='/stylesheets/signup.css')
+
+block content
+    .wrapper
+    .centeralize
+        img(src="/images/logo.png" width="150px")
+        h2(style='color: white; text-transform: uppercase; border-bottom: 1px solid #fff;') SignUp Here
+
+        form(action='/users/signup' method='post' name='signupForm')
+            input(type='text' name='firstName' placeholder='First Name')
+            p.errorInput.errorFirstName
+            input(type='text' name='lastName' placeholder='Last Name')
+            p.errorInput.errorLastName
+            input(type='text' name='username' placeholder='Username')
+            p.errorInput.errorUsername 
+                b Note : 
+                | username is converted to lowercase automatically
+            input(type='email' name='email' placeholder='E-mail')
+            p.errorInput.errorEmail
+            input(type='password' name='password' placeholder='Password')
+            p.errorInput.errorPassword
+            input(type='text' name='confirmPassword' placeholder='Confirm Password')
+            p.errorInput.errorConfimPassword
+            input(type='submit' value='Sign Up')
+            p
+                | Already have a account ? 
+                a(href='/users/login' style='color: red;') Login Here
+        script(src='/javascripts/signup.js')
