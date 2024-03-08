@@ -13,7 +13,7 @@ async function uploadProfileImage(localFilePath) {
         const response = await cloudinary.uploader.upload(localFilePath, {
             resource_type : 'image'
         })
-        return response;
+        return response.url;
     } catch (error) {
         return error;
     }

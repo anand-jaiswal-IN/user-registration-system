@@ -56,12 +56,12 @@ router.post("/updateProfilePhoto", (req, res, next) => {
       res.redirect("/auth/editProfile?message=File%20not%20uploaded");
     } else {
       try {
-        const responseFromCloudinary = await uploadProfileImage(uploadPath); // upload file to cloud
+        const urlFromCloudinary = await uploadProfileImage(uploadPath); // upload file to cloud
         fs.unlinkSync(uploadPath); // delete file from uploads
         await mongoose.connect(process.env.DB_URI);
         let user = await User.findOneAndUpdate(
           { username: req.session.user.username },
-          { $set: { profileImgUrl: responseFromCloudinary.url } },
+          { $set: { profileImgUrl: urlFromCloudinary } },
           { new: true }
         );
         await user.save();
